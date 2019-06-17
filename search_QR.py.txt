@@ -1,0 +1,19 @@
+#! /usr/bin/python3
+from googlesearch import search
+import webbrowser,time,qrcode
+import pyzbar
+link=[]
+n=1
+data=input("Enter desired data you want to search : ")
+
+
+for i in search(data,stop=3) :
+	link.append(i)
+for i in link :
+	qr = qrcode.QRCode( version=1, error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=10, border=3 ) 
+	qr.add_data(i) 
+	qr.make(fit=True) 
+	code = qr.make_image(fill_color="black", back_color="yellow") 
+	code.save(f"Search_Result{n}.png")
+	n=n+1
+
