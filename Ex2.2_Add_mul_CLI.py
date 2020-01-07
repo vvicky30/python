@@ -11,8 +11,8 @@ print(num2)
 
 #definition of function
 def add_mul(x,y):
-    print(x+y)
-    print(x*y)
+    print("addition is:",x+y)
+    print("multiplication is:",x*y)
 
 
 #call
